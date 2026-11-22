@@ -1,3 +1,9 @@
+:root {
+  --font-syne: "Syne";
+  --font-jakarta: "Plus Jakarta Sans";
+  --font-mono: "JetBrains Mono";
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

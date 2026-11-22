@@ -1,31 +1,9 @@
 import type { Metadata, Viewport } from "next";
-import { Syne, Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import LenisProvider from "@/components/motion/LenisProvider";
 import Header from "@/components/layout/Header";
 import TelemetryRail from "@/components/layout/TelemetryRail";
 import SvgPipelineTrace from "@/components/motion/SvgPipelineTrace";
-
-const syne = Syne({
-  subsets: ["latin"],
-  variable: "--font-syne",
-  display: "swap",
-  weight: ["500", "700", "800"],
-});
-
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-jakarta",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const jetbrainsMono = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  display: "swap",
-  weight: ["400", "500", "600"],
-});
 
 export const metadata: Metadata = {
   title: "Anik Dash — IT Manager | Cloud & DevOps | Business Technology",
@@ -68,8 +46,16 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${jakarta.variable} ${jetbrainsMono.variable} scroll-smooth`}
+      className="scroll-smooth"
     >
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap"
+        />
+      </head>
       <body className="relative bg-paper-cream text-carbon-text antialiased selection:bg-cloud-blue selection:text-white">
         <LenisProvider>
           {/* Continuous Signature Pipeline Vector */}
